@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s= new Scanner(System.in);
+
+         System.out.println("enter the value of a:");
+         int a=s.nextInt();
+         
+          System.out.println("enter the value of b:");
+         int b=s.nextInt();
+         System.out.println("enter the value of b:");
+         int c=s.nextInt();
+         
+         if((a>b) && (a>c)){
+             System.out.println("a is greater with value:"+a);
+         }
+         else if((b>a) && (b>c)){
+            System.out.println("b is greater with value:"+b);
+        }
+        else{
+            System.out.println("c is greater with value:"+c);
+        }
+        s.close();
+        }
+}
