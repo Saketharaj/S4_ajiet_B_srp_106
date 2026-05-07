@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int n = s.nextInt();
+        int k = s.nextInt();
+        int j = s.nextInt();
+        int m = s.nextInt();
+        int p = s.nextInt();
+
+        if (n <= 0 || k <= 0 || j <= 0) {
+            System.out.println("INVALID INPUT");
+            return;
+        }
+
+        int monkeys = Math.max(m / k, p / j);
+
+        if (m % k != 0) monkeys++;
+        if (p % j != 0) monkeys++;
+
+        int left = n - monkeys;
+
+        if (left < 0) left = 0;
+
+        System.out.println("Number of Monkeys left on the Tree:" + left);
+    }
+}
