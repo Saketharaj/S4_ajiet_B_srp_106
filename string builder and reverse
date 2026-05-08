@@ -1,0 +1,19 @@
+
+
+class Main {
+    public static void main(String[] args) {
+        String txt="boring";
+        StringBuilder sb=new StringBuilder(txt);
+       sb.reverse();
+        System.out.println(sb.toString());
+        String text=sb.toString();
+        if(txt==text){
+            System.out.println("palindrome");
+            
+        }
+        else{
+            System.out.println("not palindorme");
+        }
+        
+    }
+}
