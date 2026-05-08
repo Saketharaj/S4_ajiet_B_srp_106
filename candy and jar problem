@@ -1,0 +1,23 @@
+# Simple Candy Jar Program
+
+N = 10   
+K = 5    
+
+candies = N
+
+while True:
+    order = int(input("Enter candies to buy: "))
+
+    # Check valid input
+    if order > candies:
+        print("INVALID INPUT")
+    else:
+        candies -= order
+
+        print("Number of Candies Sold:", order)
+        print("Number of Candies available:", candies)
+
+        # Refill jar when candies become <= K
+        if candies <= K:
+            candies = N
+            print("Jar refilled to", N)
