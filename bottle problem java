@@ -1,0 +1,68 @@
+public class Bottle {
+    String brand;
+    String colour;
+    double volume; 
+   
+    boolean isOpen;
+    boolean isEmpty;
+
+    
+    public Bottle(String brand, String colour, double volume) {
+        this.brand = brand;
+        this.colour = colour;
+        this.volume = volume;
+        this.isOpen = false;   
+    }
+
+    public void openCap() {
+        isOpen = true;
+        System.out.println("The " + brand + " bottle is now OPEN.");
+    }
+
+    public void closeCap() {
+        isOpen = false;
+        System.out.println("The " + brand + " bottle is now CLOSED.");
+    }
+
+    public void fillWater() {
+        if (!isOpen) {
+            System.out.println("Cannot fill! The cap is closed.");
+        } else {
+            isEmpty = false;
+            System.out.println("The bottle is now FULL of water.");
+        }
+    }
+
+    public void drink() {
+        if (!isOpen) {
+            System.out.println("Cannot drink! The cap is closed.");
+        } else if (isEmpty) {
+            System.out.println("The bottle is already empty!");
+        } else {
+            isEmpty = true;
+            System.out.println("Refreshing! You drank all the water.");
+        }
+    }
+
+    public void displayInfo() {
+        System.out.println("--- Bottle Info ---");
+        System.out.println("Brand: " + brand + " | Color: " + colour + " | Capacity: " + volume + "L");
+        System.out.println("Status: " + (isOpen ? "Open" : "Closed") + " and " + (isEmpty ? "Empty" : "Full"));
+        System.out.println("-------------------");
+    }
+
+public static void main(String[] args) {
+        // Create a new bottle object
+        Bottle myBottle = new Bottle("Tupperware", "Blue", 1.0);
+
+        myBottle.displayInfo();
+        
+        myBottle.fillWater();  // Will fail because it's closed
+        myBottle.openCap();
+        myBottle.fillWater();  // Now it works
+        myBottle.drink();
+        myBottle.closeCap();
+        
+        myBottle.displayInfo();
+    }
+}
